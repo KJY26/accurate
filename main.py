@@ -3,7 +3,7 @@ import time
 import xml.etree.ElementTree as et
 
 def main():
-    local = time.localtime(time.time()) # 2시간 전 데이터 받아옴
+    local = time.localtime(time.time())
 
     url = 'http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst'
     params ={'serviceKey' : 'loGEsi8RLLPDoscN/+N/FQs4Gck/La0uzw51zooTczK3aWcmK6mvoHJ8tfF1uCtnKl2OdfmXYnz1QtEauhwWPA==', 'pageNo' : '1', 'numOfRows' : '1000', 'dataType' : 'XML', 'base_date' : str(local.tm_year).zfill(2)+str(local.tm_mon).zfill(2)+str(local.tm_mday).zfill(2), 'base_time' : str(local.tm_hour).zfill(2)+str(local.tm_min).zfill(2), 'nx' : '61', 'ny' : '126' }
