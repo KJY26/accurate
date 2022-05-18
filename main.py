@@ -20,7 +20,7 @@ def main():
 
     data = root[1][1]
 
-    result = open("results/"+str(data[0][0].text)+".txt", 'w', encoding='UTF-8')
+    result = open("results/"+fname+".txt", 'w', encoding='UTF-8')
 
     print()
     for child in data:
