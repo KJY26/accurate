@@ -11,16 +11,16 @@ def main():
     response = requests.get(url, params=params)
     text = response.text
     fname = str(local.tm_year).zfill(2)+str(local.tm_mon).zfill(2)+str(local.tm_mday).zfill(2)+str(local.tm_hour).zfill(2)+str(local.tm_min).zfill(2)
-    f = open("xmls/"+"report"+".xml", 'w', encoding='UTF-8')
+    f = open("report"+".xml", 'w', encoding='UTF-8')
     f.write(text)
     f.close()
 
-    file = et.parse("xmls/"+"report"+".xml")
+    file = et.parse("report"+".xml")
     root = file.getroot()
 
     data = root[1][1]
 
-    result = open("result.txt", 'w', encoding='UTF-8')
+    result = open("results/"+str(data[0][0].text)+".txt", 'w', encoding='UTF-8')
 
     print()
     for child in data:
