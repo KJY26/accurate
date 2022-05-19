@@ -3,7 +3,7 @@ import time
 import xml.etree.ElementTree as et
 
 def main():
-    local = time.localtime(time.time())
+    local = time.localtime(time.time()-3600)
 
     legend = ['강수형태','습도','1시간 강수량','기온','동서바람성분','풍향','남북바람성분','풍속']
 
@@ -32,9 +32,8 @@ def main():
     for child in data:
         result.write(legend[i]+'\n')
         print(legend[i])
-        for value in child:
-            print(value.tag, value.text)
-            result.write(value.tag+' '+value.text+' '+"\n")
+        print(child[5].text)
+        result.write(child[5].text + ' ' + "\n")
         result.write("\n")
         print()
         i=i+1
