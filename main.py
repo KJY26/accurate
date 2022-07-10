@@ -31,11 +31,9 @@ def main():
     i = 0
     for child in data:
         result.write(legend[i]+'\n')
-        print(legend[i])
-        print(child[5].text)
+        print(legend[i]+":"+child[5].text)
         result.write(child[5].text + ' ' + "\n")
         result.write("\n")
-        print()
         i=i+1
 
     result.close()
